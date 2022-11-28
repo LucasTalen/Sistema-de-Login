@@ -1,3 +1,4 @@
+
 from tkinter import *
 
 class Aplicativo:
@@ -54,13 +55,30 @@ class Aplicativo:
 
 
     def AutenticarLogin(self):
-        nome = self.Email.get()
+        autenticarlogin = self.CriarUsuario()
+
+        email = self.Email.get()
         senha = self.Senha.get()
-        if nome == "Lucas" and senha == "Lucas58227":
+        """
+        if email == emailBancoDeDados and senha == senhaBancoDeDados:
             self.Mensagem["text"] = "Bem Vindo Lucas"
         else:
             self.Mensagem["text"] = "Login Incorreto"
-
+        """
+        with open("BancoDeDados.txt", "r", encoding="utf-8") as arquivo:
+            usuario = arquivo.readlines()
+            for linha in usuario:
+                linha = linha.strip('\n')
+                EmailBancoDeDados,SenhaBancoDeDados = linha.split(":")
+                if EmailBancoDeDados == email and SenhaBancoDeDados == senha:
+                    self.Mensagem["text"] = "Você esta logado!"
+       
+    def CriarUsuario(self):
+        with open("BancoDeDados.txt", "r") as arquivo:
+            arquivo.read()
+        
+    def ProcurarUsuario(self):
+        pass
 
 
 janela = Tk()
