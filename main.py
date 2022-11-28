@@ -58,12 +58,7 @@ class Aplicativo:
         email = self.Email.get()
         senha = self.Senha.get()
         SenhaIncorreta = True
-        """
-        if email == emailBancoDeDados and senha == senhaBancoDeDados:
-            self.Mensagem["text"] = "Bem Vindo Lucas"
-        else:
-            self.Mensagem["text"] = "Login Incorreto"
-        """
+
         with open("BancoDeDados.txt", "r", encoding="utf-8") as arquivo:
             usuario = arquivo.readlines()
             for linha in usuario:
