@@ -55,10 +55,9 @@ class Aplicativo:
 
 
     def AutenticarLogin(self):
-        autenticarlogin = self.CriarUsuario()
-
         email = self.Email.get()
         senha = self.Senha.get()
+        SenhaIncorreta = True
         """
         if email == emailBancoDeDados and senha == senhaBancoDeDados:
             self.Mensagem["text"] = "Bem Vindo Lucas"
@@ -72,6 +71,10 @@ class Aplicativo:
                 EmailBancoDeDados,SenhaBancoDeDados = linha.split(":")
                 if EmailBancoDeDados == email and SenhaBancoDeDados == senha:
                     self.Mensagem["text"] = "Você esta logado!"
+                    SenhaIncorreta = False
+                    break
+            if SenhaIncorreta == True:
+                self.Mensagem["text"] = "Senha incorreta!"
        
     def CriarUsuario(self):
         with open("BancoDeDados.txt", "r") as arquivo:
