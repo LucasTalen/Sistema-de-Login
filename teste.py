@@ -17,7 +17,7 @@ nome,senha = frase.split(":")
 print(nome)
 print(senha)
 """
-
+"""
 email = str(input("Digite seu email: "))
 senha = str(input("Digite sua senha: "))
 logado = False
@@ -29,4 +29,19 @@ with open("BancoDeDados.txt", "r", encoding="utf-8") as arquivo:
         emailUsuario,senhaUsuario = linha.split(":")
         if emailUsuario.find(email) and senhaUsuario.find(senha):
             print("logado")
-       
+       """
+from tkinter import *
+def clique(retorno):
+    print(retorno)
+    print(janela.geometry())
+
+janela = Tk()
+
+janela.bind("<Button-1>", clique)
+
+imgFundo = PhotoImage(file="Aserts\\Login.png")
+labfundo = Label(janela, image=imgFundo)      
+labfundo.pack()
+    
+
+janela.mainloop()  
