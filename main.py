@@ -1,8 +1,10 @@
-
 from tkinter import *
+from tkinter import messagebox
 
-class Menu:
-    def __init__(self, master=None):
+janela = Tk()
+class Aplicativo:
+
+    def Menu(self):
         self.Tela()
 
         imgFundo = PhotoImage(file="Aserts\\Menu.png")
@@ -21,14 +23,9 @@ class Menu:
 
         janela.mainloop()
 
-
     def Tela(self):
         janela.title("Menu")
         janela.geometry("380x514")
         janela.resizable(width=False, height=False)
 
-    def chamarLogin(self): 
-        import Login
-        
-janela = Tk()
-Menu(janela)
+    Menu()

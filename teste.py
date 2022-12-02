@@ -39,7 +39,7 @@ janela = Tk()
 
 janela.bind("<Button-1>", clique)
 
-imgFundo = PhotoImage(file="Aserts\\Login.png")
+imgFundo = PhotoImage(file="Aserts\\BancoDeDados.png")
 labfundo = Label(janela, image=imgFundo)      
 labfundo.pack()
     
